@@ -1,0 +1,53 @@
+3.
+
+Need to create Project for registering new bikes.where user should be able to register and logic and create bike types.and can create new bikes and with selected bike types
+and user can like and dislike bikes.can get bikes of the most liked bikes.and recently registered bikes and user can comment on bikes.
+
+APIS- register user
+      login user
+      create bike types
+      get all bike types
+      create bike
+      edit bike
+      delete bike
+      get all bikes
+      get bikes by bike types
+      get most recent regestered bikes 
+      get most liked bikes
+      comment on bike
+      
+      
+      
+      hcdf-whqx-ekoe-drhc-knxm
+
+Date: 05/04/2023
+
+InTime :- 12:25 PM
+OutTime :- 09:00 PM
+
+Name : Parmar Dixit
+LearnTechnology : Node js
+
+Today's Learn / Work Hours : 8 Hours.
+
+Building the Tour Overview
+Building the Tour Page
+Including a Map with Mapbox
+Building the Login Screen
+Logging in Users with Our API
+Logging out Users
+Rendering Error Pages
+Building the User Account Page
+Updating User Data
+
+Image Uploads Using Multer_ Users
+Saving Image Name to Database
+Resizing Images
+Processing Multiple Images
+Building a Complex Email Handler
+Email Templates with Pug_ Welcome Emails
+Sending Password Reset Emails
+Using Sendgrid for Real Emails
+Processing Payments on the Front-End
+Rendering a User_s Booked Tours
+

@@ -1,0 +1,90 @@
+         +-----------------------+                      
+         |      MongoDB          |                     
+         +-----------------------+                     
+         | +addUser(User)        |                     
+         | +updateUser(User)     |                     
+         | +deleteUser(User)     |                     
+         | +getUser(userId)      |                     
+         | +addContent(Content)  |                     
+         | +updateContent(Content)|                    
+         | +deleteContent(Content)|                    
+         | +getContent          |                     
+         | +addCategory(Category)|                     
+         | +updateCategory(Category)|                  
+         | +deleteCategory(Category)|                  
+         | +getCategory(CategoryId)|                    
+         | +addSubscription(Subscription)|             
+         | +updateSubscription(Subscription)|          
+         | +deleteSubscription(Subscription)|          
+         | +getSubscription(SubscriptionId)|            
+         | +addWatchHistory(WatchHistory)|               
+         | +updateWatchHistory(WatchHistory)|            
+         | +deleteWatchHistory(WatchHistory)|            
+         | +getWatchHistory(userId, contentId)|         
+         +-----------------------+                     
+                   |          |             |          
+                   |          |             |          
+                   |          |             |          
+                   |          |             |          
++-----------------------+ +-----------------------+ +-----------------------+
+|        User           | |        Content        | |        Category       |
++-----------------------+ +-----------------------+ +-----------------------+
+| - userId: String      | | - contentId: String    | | - categoryId: String   |
+| - name: String        | | - title: String        | | - name: String         |
+| - email: String       | | - description: String  | +-----------------------+
+| - password: String    | | - duration: Integer    |           
+|                       | | - category: Category   |
+| -subscriptions: List<| +-----------------------+
+|     Subscription>     | 
+| -watchHistory: List<  |
+|     WatchHistory>     | 
++-----------------------+
+                   |          |             |          
+                   |          |             |          
+                   |          |             |          
+                   |          |             |          
++-----------------------+ +-----------------------+
+|      Subscription     | |      WatchHistory     |
++-----------------------+ +-----------------------+
+| - subscriptionId:     | | - watchHistoryId:     |
+|   String              | |   String              |
+| - userId: String      | | - userId: String      |
+| - subscriptionType:   | | - contentId: String   |
+|   String              | | - startTime: Date     |
+| - startDate: Date     | | - endTime: Date       |
+| - endDate: Date       | +-----------------------+
++-----------------------+                     
+
+                      +-----------------+
+                      |   User selects  |
+                      |   a TV show or  |
+                      |   movie to watch|
+                      +--------+--------+
+                               |
+                               |
+                               v
+                   +-----------+-----------+
+                   |   User clicks "Play"  |
+                   |   button              |
+                   +-----------+-----------+
+                               |
+                               |
+                               v
+                   +-----------+-----------+
+                   |   System verifies    |
+                   |   user subscription  |
+                   +-----------+-----------+
+                               |
+               +---------------+---------------+
+               |                                   |
+        +------v------+                    +-------v------+
+        |  Invalid    |                    |  Subscription |
+        | subscription|                    |    verified   |
+        +-------------+                    +--------------+
+               |                                   |
+               |                                   |
+               v                                   v
++--------------+---------------+   +---------------+---------------+
+|       Show error message      |   |     Play the selected TV show   |
+|  and ask user to subscribe   |   |   or movie if subscription is ok |
++------------------------------+   +--------------------------------+
